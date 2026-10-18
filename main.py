@@ -18,7 +18,7 @@
 rh = int(input("Masukkan kelembapan relatif (%): "))
 dp = float(input("Masukkan suhu titik jenuh (C): "))
 t = float(input("Masukkan suhu udara (C): "))
-delta_p = float(input("Masukkan perubahan tekanan 3 jam terakhir (hPa): "))
+delta_p = float(input("Masukkan perubahan tekanan dalam 3 jam terakhir (+/- hPa): "))
 ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (Ya/Tidak)? "))
 
 dp_dep = t - dp
@@ -35,7 +35,7 @@ if(dp_dep <= 3):
 else:
     dp_depskor = 0
 
-if(delta_p >= 2):
+if(delta_p <= -2):
     delta_pskor = 2
 else:
     delta_pskor = 0
