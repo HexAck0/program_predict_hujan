@@ -46,10 +46,10 @@ while (p_akh < 0):
     print("Tekanan tidak bisa kurang dari 0 hPa.")
     p_akh = float(input("Masukkan tekanan atmosfer akhir (hPa): "))
 
-ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (Ya/Tidak)? ")).lower()
+ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (ya/tidak)? "))
 while (ind_hujan != "ya" and ind_hujan != "tidak"):
-    print("Jawaban hanya menerima 'Ya' atau 'Tidak'.")
-    ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (Ya/Tidak)? ")).lower()
+    print("Jawaban hanya menerima 'ya' atau 'tidak'.")
+    ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan ya/tidak)? "))
 
 # Subprogram Perhitungan Perbedaan Tekanan
 def hitung_delta_p(p_aw, p_akh):
