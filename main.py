@@ -1,4 +1,12 @@
 # Program Prediksi Hujan
+# Kelompok 1
+# Muhammad Fatkhi Rakhman (16326007)
+#Aiman Adhipramana (16326167)
+#Fathur Syahri Raz (16326283)
+#Salman Al-Farisi (16326343)
+#Sayyid Abdullah Dinnejjad (16326383)
+
+
 # Memprediiksi apakah akan terjadi hujan berdasarkan syarat-syarat tertentu
 # yang ditentukan melalui skor
 
@@ -28,8 +36,15 @@ while (dp > t or dp < 0):
     print("Suhu titik jenuh tidak bisa lebih dari suhu udara, atau kurang dari 0 C.")
     dp = float(input("Masukkan suhu titik jenuh (C): "))
 
-p_aw = float(input("Masukkan tekanan awal (hPA): "))
-p_akh = float(input("Masukkan tekanan akhir (hPA): "))
+p_aw = float(input("Masukkan tekanan atmosfer awal (hPa): "))
+while (p_aw < 0):
+    print("Tekanan tidak bisa kurang dari 0 hPa.")
+    p_aw = float(input("Masukkan tekanan atmosfer awal dalam waktu 3 jam (hPa): "))
+    
+p_akh = float(input("Masukkan tekanan atmosfer akhir dalam waktu 3 jam (hPa): "))
+while (p_akh < 0):
+    print("Tekanan tidak bisa kurang dari 0 hPa.")
+    p_akh = float(input("Masukkan tekanan atmosfer akhir (hPa): "))
 
 ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (Ya/Tidak)? ")).lower()
 while (ind_hujan != "ya" and ind_hujan != "tidak"):
