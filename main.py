@@ -16,21 +16,35 @@
 
 # ALGORITMA
 
-# Input tiap variabel
-rh = float(input("Masukkan kelembapan relatif (%): "))
-dp = float(input("Masukkan suhu titik jenuh (C): "))
+# Input tiap variabel    
+rh = float(input("Masukkan kelembapan relatif dalam persentase (angka 0-100): "))
+while(rh < 0 or rh > 100):
+    print("Kelemnbapan relatif diluar jangkauan (0-100).")
+    rh = float(input("Masukkan kelembapan relatif dalam persentase (angka 0-100): "))
+
 t = float(input("Masukkan suhu udara (C): "))
+dp = float(input("Masukkan suhu titik jenuh (C): "))
+while (dp > t or dp < 0):
+    print("Suhu titik jenuh tidak bisa lebih dari suhu udara, atau kurang dari 0 C.")
+    dp = float(input("Masukkan suhu titik jenuh (C): "))
+
 p_aw = float(input("Masukkan tekanan awal (hPA): "))
 p_akh = float(input("Masukkan tekanan akhir (hPA): "))
-ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (Ya/Tidak)? "))
 
+ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (Ya/Tidak)? ")).lower()
+while (ind_hujan != "ya" and ind_hujan != "tidak"):
+    print("Jawaban hanya menerima 'Ya' atau 'Tidak'.")
+    ind_hujan = str(input("Apakah dalam 3 jam terakhir sudah hujan (Ya/Tidak)? ")).lower()
+
+# Subprogram Perhitungan Perbedaan Tekanan
 def hitung_delta_p(p_aw, p_akh):
     delta_p = p_akh - p_aw
     return delta_p
 
+# Subprogram Perhitungan Dewpoint
 def hitung_dewpoint(t, dp):
     dp_depression = t - dp
-    return dp_depression# Perhitungan Dew Point Depression (Selisih titik embun)
+    return dp_depression
 
 # Skoring Kelembapan Relatif
 if(rh >= 90):
@@ -53,7 +67,7 @@ else:
     delta_pskor = 0
 
 # Skoring Indikator Hujan
-if(ind_hujan == "Ya"):
+if(ind_hujan == "ya"):
     ind_hujanskor = 1
 else:
     ind_hujanskor = 0
