@@ -15,7 +15,7 @@
 # rh_skor = int
 # dp = float
 # t = float
-# dp_dep = float 
+# dp_depression = float 
 # dp_depskor = int
 # delta_p = float
 # delta_pskor = int
@@ -90,6 +90,7 @@ else:
 # Perhitungan Total Skor
 total_skor = rh_skor + dp_depskor + delta_pskor + ind_hujanskor
 
+#todo: tambah indikator skor segini apa, skor segini apa
 # Output
 if(total_skor > 5):
     print(f"Terdapat kemungkinan besar akan hujan dengan skor: {total_skor}")
