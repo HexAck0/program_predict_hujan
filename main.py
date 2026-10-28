@@ -36,12 +36,12 @@ while (dp > t or dp < 0):
     print("Suhu titik jenuh tidak bisa lebih dari suhu udara, atau kurang dari 0 C.")
     dp = float(input("Masukkan suhu titik jenuh (C): "))
 
-p_aw = float(input("Masukkan tekanan atmosfer awal (hPa): "))
+p_aw = float(input("Masukkan tekanan atmosfer awal dalam kurun waktu 3 jam (hPa): "))
 while (p_aw < 0):
     print("Tekanan tidak bisa kurang dari 0 hPa.")
-    p_aw = float(input("Masukkan tekanan atmosfer awal dalam waktu 3 jam (hPa): "))
+    p_aw = float(input("Masukkan tekanan atmosfer awal dalam kurun waktu 3 jam (hPa): "))
     
-p_akh = float(input("Masukkan tekanan atmosfer akhir dalam waktu 3 jam (hPa): "))
+p_akh = float(input("Masukkan tekanan atmosfer akhir dalam kurun waktu 3 jam (hPa): "))
 while (p_akh < 0):
     print("Tekanan tidak bisa kurang dari 0 hPa.")
     p_akh = float(input("Masukkan tekanan atmosfer akhir (hPa): "))
@@ -92,9 +92,13 @@ total_skor = rh_skor + dp_depskor + delta_pskor + ind_hujanskor
 
 #todo: tambah indikator skor segini apa, skor segini apa
 # Output
+print("KRITERIA SKOR")
+print("Kemungkinan besar hujan: Skor > 5")
+print("Kemungkinan sedang hujan: Skor >= 3")
+print("Kemungkinan kecil hujan: Skor < 3")
 if(total_skor > 5):
     print(f"Terdapat kemungkinan besar akan hujan dengan skor: {total_skor}")
 elif(total_skor >= 3):
-    print(f"Terdapat kemungkinan akan hujan dengan skor: {total_skor}")
+    print(f"Terdapat kemungkinan sedang akan hujan dengan skor: {total_skor}")
 else:
     print(f"Terdapat kemungkinan kecil akan hujan dengan skor: {total_skor}")
