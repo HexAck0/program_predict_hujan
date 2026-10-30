@@ -1,25 +1,27 @@
-# Program Prediksi Hujan
+# Sistem Prediksi Hujan Berbasis Multi-Parameter Meteorologi
 # Kelompok 1
 # Muhammad Fatkhi Rakhman (16326007)
-#Aiman Adhipramana (16326167)
-#Fathur Syahri Raz (16326283)
-#Salman Al-Farisi (16326343)
-#Sayyid Abdullah Dinnejjad (16326383)
+# Aiman Adhipramana (16326167)
+# Fathur Syahri Raz (16326283)
+# Salman Al-Farisi (16326343)
+# Sayyid Abdullah Dinnejjad (16326383)
 
-
-# Memprediiksi apakah akan terjadi hujan berdasarkan syarat-syarat tertentu
+# Deskripsi: Memprediksi apakah akan terjadi hujan berdasarkan syarat-syarat tertentu
 # yang ditentukan melalui skor
 
 # KAMUS
 # rh = float
 # rh_skor = int
-# dp = float
 # t = float
-# dp_depression = float 
-# dp_depskor = int
-# delta_p = float
-# delta_pskor = int
+# dp = float
+# p_aw = float
+# p_akh = float
 # ind_hujan = str
+# delta_p = float
+# dp_depresssion = float
+# rh_skor = int
+# dp_depskor = int
+# delta_pskor = int
 # ind_hujanskor = int
 
 # ALGORITMA
@@ -90,7 +92,6 @@ else:
 # Perhitungan Total Skor
 total_skor = rh_skor + dp_depskor + delta_pskor + ind_hujanskor
 
-#todo: tambah indikator skor segini apa, skor segini apa
 # Output
 print("KRITERIA SKOR")
 print("Kemungkinan besar hujan: Skor > 5")
